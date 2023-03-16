@@ -25,6 +25,7 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
+            agent any
             environment {
                 scannerHome = tool 'SonarScanner'
             }
