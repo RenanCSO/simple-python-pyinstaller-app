@@ -36,14 +36,9 @@ pipeline {
                 }
             }
         }
-        stage('SonarQube Analysis 2') {
+        stage('Security Analysis') {
             steps {
-                echo 'Sonar Integration 2'
-            }
-        }
-        stage('Snyk Analysis') {
-            steps {
-                echo 'Snyk Integration'
+                echo 'Security Integration'
             }
         }
     }
