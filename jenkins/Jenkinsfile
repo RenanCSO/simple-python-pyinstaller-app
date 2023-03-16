@@ -15,7 +15,7 @@ pipeline {
             agent any
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
-                    sh 'pytest --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
+                    sh '/Users/renancso/.jenkins/workspace/hackone-test-pipeline/Library/Python/3.9/bin/pytest --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
                 }
             }
             post {
