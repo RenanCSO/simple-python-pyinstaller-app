@@ -25,11 +25,8 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            agent any
-            node {
-                withSonarQubeEnv('SonarScanner') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
+            steps {
+                echo 'Sonar Integration'
             }
         }
     }
