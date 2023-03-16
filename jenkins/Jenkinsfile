@@ -10,7 +10,9 @@ pipeline {
         stage('Test') {
             agent any
             steps {
-                sh 'python3 -m pytest --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
+                withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh 'python3 -m pytest --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
+                }
             }
             post {
                 always {
