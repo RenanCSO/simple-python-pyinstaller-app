@@ -25,7 +25,7 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            agent node
+            agent any
             node {
                 withSonarQubeEnv('SonarScanner') {
                     sh "${scannerHome}/bin/sonar-scanner"
