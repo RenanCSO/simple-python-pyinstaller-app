@@ -29,5 +29,10 @@ pipeline {
                 echo 'Sonar Integration'
             }
         }
+        stage('Snyk Analysis') {
+            steps {
+                echo 'Snyk Integration'
+            }
+        }
     }
 }
