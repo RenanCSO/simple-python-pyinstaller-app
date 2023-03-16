@@ -25,7 +25,8 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            agent any
+            agent { node { label 'Built-In Node' } }
+            def scannerHome = tool 'SonarScanner';
             steps {
                 withSonarQubeEnv('SonarScanner') {
                     sh "${scannerHome}/bin/sonar-scanner"
