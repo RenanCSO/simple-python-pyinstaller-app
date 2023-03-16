@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh 'python3 -m pip install --upgrade pip'
-                    sh 'pip install pytest'
+                    sh '/Users/renancso/.jenkins/workspace/hackone-test-pipeline@2/Library/Python/3.9/bin/pip install pytest'
                     sh 'python3 -m py_compile sources/add2vals.py sources/calc.py'
                 }
             }
