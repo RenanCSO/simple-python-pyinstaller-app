@@ -25,15 +25,24 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            agent any
+            environment {
+                scannerHome = tool 'SonarScanner'
+            }
             
             steps {
-                script {
-                    def scannerHome = tool 'SonarScanner';
-                }
                 withSonarQubeEnv('SonarScanner') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
+            }
+        }
+        stage('SonarQube Analysis 2') {
+            steps {
+                echo 'Sonar Integration 2'
+            }
+        }
+        stage('Snyk Analysis') {
+            steps {
+                echo 'Snyk Integration'
             }
         }
     }
