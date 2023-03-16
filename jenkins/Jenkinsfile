@@ -25,13 +25,11 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
+            agent any
             steps {
-                echo 'Sonar Integration'
-            }
-        }
-        stage('Snyk Analysis') {
-            steps {
-                echo 'Snyk Integration'
+                withSonarQubeEnv('SonarScanner') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
     }
