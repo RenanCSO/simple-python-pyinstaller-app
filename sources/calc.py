@@ -19,7 +19,6 @@ def conv(value):
 # The 'add2' function itself
 def add2(arg1, arg2):
     # Convert 'arg1' and 'arg2' to their appropriate types
-    teste = 1
     arg1conv = conv(arg1)
     arg2conv = conv(arg2)
     # If either 'arg1' or 'arg2' is a string, ensure they're both strings.
